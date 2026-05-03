@@ -52,6 +52,24 @@
       border-radius: 10px;
     }
 
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      border-bottom: 1px solid #1e293b;
+      flex-wrap: wrap; /* helps on mobile */
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;   /* prevents stretching */
+      border-radius: 50%;  /* makes it a circle */
+      border: 2px solid #38bdf8; /* optional accent */
+    }
+
     iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -76,15 +94,19 @@
 
 <body>
 
-<header>
-  <h1>Bryce Reid</h1>
-  <p>Electrical Engineering | Embedded Systems | Digital Design</p>
-  <p>Bridging Hardware and Software</p>
-  <p>
-    <a href="https://github.com/BrycesDevices" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/bryces-devices/" target="_blank">LinkedIn</a> |
-    <a href="mailto:breid62@my.bcit.ca">Email</a>
-  </p>
+<header class="header">
+  <img src="profile_pic.jpg" alt="Bryce Reid" class="profile-pic">
+
+  <div>
+    <h1>Bryce Reid</h1>
+    <p>Electrical Engineering | Embedded Systems | Digital Design</p>
+    <p>Bridging Hardware & Software</p>
+    <p>
+      <a href="https://github.com/BrycesDevices" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/bryces-devices/" target="_blank">LinkedIn</a> |
+      <a href="mailto:breid62@my.bcit.ca">breid62@my.bcit.ca</a>
+    </p>
+  </div>
 </header>
 
 <div class="container">
@@ -92,15 +114,30 @@
   <section>
     <h2>About</h2>
     <p>
-      I am a recent graduate of the Electrical Engineering bachelor’s program at the British Columbia Institute of Technology (BCIT), where I developed a strong foundation in core engineering disciplines including circuit design, power systems, and process control. I graduated with a 92% GPA.
-
-      Through multi-term design projects, including my fourth-year capstone, I took on leadership roles in the development and integration of complex systems. These experiences strengthened my ability to manage technical scope, collaborate effectively, and deliver results in team-based environments.
-
-      As a Project Assistant at Houle Electric, I worked closely with project managers, engineers, and contractors to support real-world project execution and ensure alignment between system design and implementation.
-
-      My primary interests are in embedded systems, RTL design, and DSP. I enjoy working at the intersection of hardware and software to translate high-level concepts into practical, low-level implementations.
-
-      I am currently seeking opportunities in embedded systems, digital/RTL/FPGA/ASIC design, or design verification, and I remain open to roles across the broader electrical engineering domain.
+      I am a recent graduate of the Electrical Engineering bachelor’s program at the 
+      British Columbia Institute of Technology (BCIT), where I developed a strong foundation 
+      in core engineering disciplines including circuit design, power systems, and process control. 
+      I graduated with a 92% GPA.
+    </p>
+    <p>
+      Through multi-term design projects, including my fourth-year capstone, I took on leadership 
+      roles in the development and integration of complex systems. These experiences strengthened 
+      my ability to manage technical scope, collaborate effectively, and deliver results in 
+      team-based environments.
+    </p>
+    <p>
+      As a Project Assistant at Houle Electric, I worked closely with project managers, engineers, 
+      and contractors to support real-world project execution and ensure alignment between system 
+      design and implementation.
+    </p>
+    <p>
+      My primary interests are in embedded systems, RTL design, and DSP. I enjoy working at the 
+      intersection of hardware and software to translate high-level concepts into practical, 
+      low-level implementations.
+    </p>
+    <p>
+      I am currently seeking opportunities in embedded systems, digital/RTL/FPGA/ASIC design, or 
+      design verification, and I remain open to roles across the broader electrical engineering domain.
     </p>
   </section>
 
