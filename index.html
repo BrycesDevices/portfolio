@@ -71,6 +71,14 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
+    .project-img {
+      display: block;
+      margin: 1rem auto;     /* centers horizontally */
+      max-width: 100%;       /* responsive */
+      width: 500px;          /* optional: control size */
+      border-radius: 10px;   /* rounded corners */
+    }
+
     iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -245,7 +253,7 @@
         to apply in future projects.
       </p>
 
-      <img src="analog_kick.jpg">
+      <img src="analog_kick.jpg" class="project-img" alt="Analog kick drum circuit">
 
       <iframe src="https://www.youtube.com/embed/QGIRl2EXZO0"
               frameborder="0"
