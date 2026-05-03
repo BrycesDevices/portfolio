@@ -63,11 +63,12 @@
     }
 
     .profile-pic {
-      width: 120px;
-      height: 120px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;   /* prevents stretching */
       border-radius: 50%;  /* makes it a circle */
       border: 2px solid #38bdf8; /* optional accent */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     iframe {
@@ -95,18 +96,23 @@
 <body>
 
 <header class="header">
-  <img src="profile_pic.jpg" alt="Bryce Reid" class="profile-pic">
-
   <div>
     <h1>Bryce Reid</h1>
     <p>Electrical Engineering | Embedded Systems | Digital Design</p>
     <p>Bridging Hardware & Software</p>
     <p>
       <a href="https://github.com/BrycesDevices" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/bryces-devices/" target="_blank">LinkedIn</a> |
+      <a href="https://www.linkedin.com/in/bryces-devices/" target="_blank">LinkedIn</a>
+    </p>
+    <p>
+      Email: 
       <a href="mailto:breid62@my.bcit.ca">breid62@my.bcit.ca</a>
     </p>
+    <p>Phone: 604-401-8363</p>
+    <p>Location: Burnaby, British Columbia, Canada</p>
   </div>
+  
+  <img src="profile_pic.jpg" alt="Bryce Reid" class="profile-pic">
 </header>
 
 <div class="container">
