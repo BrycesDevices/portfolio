@@ -63,8 +63,8 @@
     }
 
     .profile-pic {
-      width: 300px;
-      height: 300px;
+      width: 270px;
+      height: 270px;
       object-fit: cover;   /* prevents stretching */
       border-radius: 50%;  /* makes it a circle */
       border: 2px solid #38bdf8; /* optional accent */
@@ -175,7 +175,7 @@
     </div>
 
     <div class="project">
-      <h3>MIDI Drum Sequencer Prototype</h3>
+      <h3>MIDI Drum Sequencer</h3>
       <p>
         This is a 16 step sequencer programmed in C on a Raspberry Pi Pico 2 W microcontroller. The sequencer has four programmable tracks, each assigned to trigger MIDI drum sounds in a DAW such as Logic Pro X.
       </p>
@@ -184,6 +184,52 @@
       </p>
 
       <iframe src="https://www.youtube.com/embed/M-kd4VmO2eI"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="project">
+      <h3>Automated Robot Car</h3>
+      <p>
+        In the second year of the electrical engineering program at BCIT we completed an automated 
+        robot car design project in groups of two.
+      </p>
+      <p>
+        The objective of the project was to design a completely autonomous car that could navigate
+         a course designed by the instructor, hit each of the four wall mounted targets with a 
+         projectile launched from a spring loaded BB shooter, and park in the designated finish
+         area at the other side of the course. 
+      </p>
+      <p>
+        This project was implemented on a Raspberry Pi 4 single-board computer running on Linux OS 
+        using object-orient programming concepts in C++. The design utilized SSH for remote deployment, 
+        GPIO libraries for hardware interfacing, OpenCV for computer vision and GUI development, and 
+        socket programming for networked control.
+      </p>
+      <p>
+        Our group divided the project work into two categories; hardware and software. My partner 
+        handled the hardware and I handled the software.
+      </p>
+      <p>
+        The car accessed an overhead video stream of the course by communicating serially with a 
+        local server. The car then used a top mounted QR code to determine its position and navigate 
+        the course.
+      </p>
+      <p>
+        Our car was able to complete the course in under 40 seconds, earning us full marks for the 
+        assignment.
+      </p>
+      
+      <p>
+        <a href="#">View Code</a>
+      </p>
+
+      <iframe src="https://www.youtube.com/embed/h_64W52DW-0"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+      <iframe src="https://www.youtube.com/embed/0RILqxMUaLg"
               frameborder="0"
               allowfullscreen>
       </iframe>
