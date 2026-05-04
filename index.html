@@ -74,8 +74,8 @@
     .project-img {
       display: block;
       margin: 1rem auto;     /* centers horizontally */
-      max-width: 100%;       /* responsive */
-      width: 500px;          /* optional: control size */
+      width: 100%;
+      max-width: 700px;
       border-radius: 10px;   /* rounded corners */
     }
 
@@ -158,6 +158,80 @@
     <h2>Projects</h2>
 
     <div class="project">
+      <h3>Wireless Wearable Group Intercom</h3>
+      <p>
+        For my fourth-year Capstone project at BCIT, my team developed firmware for a helmet-mounted 
+        wireless intercom enabling real-time communication between cyclists in groups of 2-4. The system 
+        is intended to address safety challenges caused by wind noise, distance, and the need for riders 
+        to turn or shout while riding. Our prototype was built on an Nordic Semiconductors nRF5340 
+        Development Kit, with the firmware written in C using the nRF Connect SDK and Zephyr RTOS. 
+      </p>
+      <p>
+        I took on the role of Team Lead for the project. As Team Lead, I assessed project goals, timelines, 
+        and resources, and executed workplans tailored to each team member’s strengths. I managed stakeholder 
+        communication with our project mentor and industry sponsor, tracked progress through bi-weekly 
+        reports and milestone reviews, and facilitated team meetings and task delegation. The project required 
+        quickly becoming proficient with an unfamiliar toolchain, including the nRF Connect SDK, Zephyr RTOS, 
+        and associated development tools. As the most experienced firmware developer on the team, I organized 
+        training sessions to bring members up to speed and improve overall effectiveness. 
+      </p>
+      <p>
+        In addition to my leadership role, I was also responsible for designing and implementing the wireless 
+        networking architecture. 
+      </p>
+  
+      <img src="WWGI_Devices_cropped.png" alt="WWGI Devices" class="project-img">
+
+      <p>
+        Similar products on the market commonly use cellular or Wi-Fi for networking, but these solutions 
+        require the user to connect the device to a cellphone. However, our industry sponsor, Herd 
+        Technologies, insisted that they wanted the design to work independently of a cellphone. The 
+        networking solution initially proposed in the sponsor’s project proposal was Bluetooth Mesh.
+      </p>
+      <p>
+        After evaluating Bluetooth Mesh, I determined it was unsuitable for low-latency audio 
+        streaming. Ultimately, Bluetooth LE Audio was selected due to its support for low-power, 
+        standalone audio streaming without Wi-Fi or cellular connectivity. But our design required 
+        many-to-many connectivity and most Bluetooth LE Audio applications and resources I found 
+        were for one-to-one or one-to-many connection topologies.
+      </p>
+      <p>
+        My solution was to design a custom star topology using the Bluetooth LE Audio protocol in 
+        Unicast (connection-based) streaming mode. Each device uses a push-to-talk button to indicate 
+        when it has voice audio data to send. A central “gateway” device receives audio 
+        data, or a 1-byte inactive audio flag, from each peripheral device. An active speaker 
+        selection algorithm is implemented at the central device to determine which user’s audio 
+        to output through the intercom. The active speaker’s incoming audio is buffered then audio 
+        routing logic is used to transmit the audio data to the listening peripheral devices. This 
+        design minimizes bandwidth usage and avoids crosstalk by ensuring only one active audio 
+        stream is transmitted at a time. 
+      </p>
+      <p>
+        I chose the nRF5340 DK to implement our design because the 
+        hardware is designed specifically with low-energy, wireless devices in mind and the nRF 
+        Connect SDK development platform offers an excellent Bluetooth stack and Bluetooth LE 
+        Audio examples and sample applications. We started with the nRF5340 Audio application 
+        sample, which features a full Bluetooth stack implementation for a gateway device 
+        streaming bidirectional audio to one or two peripheral devices intended to be a wireless 
+        headset or pair of headphones. To implement our custom networking design, complete audio 
+        routing and active speaker selection modules were written from scratch, and several source 
+        files in the sample codebase were modified.
+      </p>
+      <p>
+        The final design reliably maintains wireless audio streaming connections between four 
+        devices at distances of approximately 18 m and can recover from single-device disconnections.
+      </p>
+      <p>
+        <a href="#">View Code</a>
+      </p>
+
+      <iframe src="https://www.youtube.com/embed/5SWgvzjk7Iw"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="project">
       <h3>LFO Generator</h3>
       <p>
         This a digital design project built during my electrical engineering degree. The design is a variable waveshape LFO generator implemented on an FPGA using SystemVerilog, structured as a modular design with components for SPI communication to an external DAC, waveform generation using lookup tables, clock generation, and user input handling via rotary encoders. I developed testbenches to verify individual modules and used simulation 
@@ -209,7 +283,7 @@
         on the opposite side of the course. 
       </p>
       <p>
-        This project was implemented on a Raspberry Pi 4 single-board computer running a Linux OS, using 
+        This project was implemented on a Raspberry Pi 4 single-board computer running Linux OS, using 
         object-oriented programming concepts in C++. The design utilized SSH for remote deployment, GPIO 
         libraries for hardware interfacing, OpenCV for computer vision and GUI development, and socket 
         programming for networked control.
