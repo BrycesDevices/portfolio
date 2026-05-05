@@ -162,7 +162,7 @@
       low-level implementations.
     </p>
     <p>
-      I am currently seeking opportunities in embedded systems, digital/RTL/FPGA/ASIC design, or 
+      I am currently seeking opportunities in embedded systems, digital / RTL / FPGA / ASIC design, or 
       design verification, and I remain open to roles across the broader electrical engineering domain.
     </p>
   </section>
@@ -370,6 +370,38 @@
               frameborder="0"
               allowfullscreen>
       </iframe>
+    </div>
+
+    <div class="project">
+      <h3>Color-Based Sorting Machine</h3>
+      <p>
+        This project is an automated color-based recycling sorter built as a standalone system on a Raspberry Pi, 
+        developed for an Object Oriented Design course during my electrical engineering degree. The system identifies 
+        the color of a ball loaded into a vertical chute using a Pi camera and HSV color segmentation with OpenCV, 
+        then physically sorts it into one of four corner bins. The software was implemented in C++ using object-oriented 
+        design principles, inheriting from a provided base class and encapsulating all sorting logic in a dedicated class.
+      </p>
+      <p>
+        The mechanical apparatus was designed and built from scratch around a central vertical chute that holds balls in 
+        a queue before sorting begins. Small windows cut into the side of the chute allow the Pi camera to image each ball 
+        before it is released. A servo arm at the base of the chute controls ball release and directs each ball onto one of 
+        two ramps running to either side. At the bottom of each ramp, a second servo with a curved vertical paddle redirects 
+        the ball into either the front or rear bin on that side, enabling four distinct sorting destinations from two binary 
+        decisions.
+      </p>
+      <p>
+        The full system was integrated with GPIO-controlled servos, physical pushbuttons for start/stop control and manual 
+        bin override, and LEDs indicating system state and bin activity. Color detection was implemented using HSV thresholding 
+        with adjustable trackbars, contour detection to identify the largest color region, and erode/dilate filtering to reduce 
+        noise. The completed system successfully sorted balls into four bins by color, achieving the highest stretch goal for 
+        the assignment.
+      </p>
+
+      <div class="image-row">
+        <img src="sort1.jpg">
+        <img src="sort2.jpg">
+        <img src="sort3.jpg">
+      </div>
     </div>
 
     <div class="project">
