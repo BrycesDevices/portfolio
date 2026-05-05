@@ -79,6 +79,19 @@
       border-radius: 10px;   /* rounded corners */
     }
 
+    .image-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .image-row img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
     iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -231,16 +244,24 @@
     <div class="project">
       <h3>LFO Generator</h3>
       <p>
-        This a digital design project built during my electrical engineering degree. The design is a variable waveshape LFO generator implemented on an FPGA using SystemVerilog, structured as a modular design with components for SPI communication to an external DAC, waveform generation using lookup tables, clock generation, and user input handling via rotary encoders. I developed testbenches to verify individual modules and used simulation 
-        tools to debug functionality and validate design behavior.
+        This a digital design project built during my electrical engineering degree. The design is a variable 
+        waveshape LFO generator implemented on an FPGA using SystemVerilog, structured as a modular design with 
+        components for SPI communication to an external DAC, waveform generation using lookup tables, clock 
+        generation, and user input handling via rotary encoders. I developed testbenches to verify individual 
+        modules and used simulation tools to debug functionality and validate design behavior. I used TCL scripting 
+        in ModelSim to automate simulation workflows, including compilation, simulation execution, and waveform setup.
       </p>
       <p>Project Purpose:</p>
       <p>
-        This is a guitar effect pedal accessory that generates a low frequency oscillator (LFO) control voltage (CV) signal to control external guitar pedal parameters.
+        This is a guitar effect pedal accessory that generates a low frequency oscillator (LFO) control voltage (CV) 
+        signal to control external guitar pedal parameters.
       </p>
       <p>Example Use Case:</p>
       <p>
-        I have a guitar overdrive pedal that has a ¼’’ external expression input. This input is intended to be connected to an external foot pedal that allows the player to control the filter cutoff parameter with their foot as opposed to turning the “FILTER” knob on the pedal. Using the same principal as the foot pedal, an LFO signal can be applied to this input to create a dynamic effect by continually modulating the filter cutoff.
+        I have a guitar overdrive pedal that has a ¼’’ external expression input. This input is intended to be connected 
+        to an external foot pedal that allows the player to control the filter cutoff parameter with their foot as opposed 
+        to turning the “FILTER” knob on the pedal. Using the same principal as the foot pedal, an LFO signal can be applied 
+        to this input to create a dynamic effect by continually modulating the filter cutoff.
       </p>
       <p>
         <a href="https://github.com/BrycesDevices/LFO_Generator/tree/main">View Code</a>
@@ -265,6 +286,46 @@
       </p>
 
       <iframe src="https://www.youtube.com/embed/M-kd4VmO2eI"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="project">
+      <h3>Breathing Cube Web App</h3>
+      <p>
+        The Breathing Cube is a distributed IoT system designed to help users build consistent meditation habits. 
+        The physical device, built on an ESP-32, guides users through breathing exercises using customizable lighting 
+        patterns and connects to a cloud backend to track session data. A companion web application allows users to 
+        personalize colors, animations, and alarm settings, while metrics such as session duration and streak 
+        consistency provide feedback to encourage long-term engagement. The project was developed collaboratively in 
+        an Agile Scrum team using Python for the backend, HTML, CSS, and JavaScript for the frontend, Firebase as the 
+        cloud platform, and Git for version control and team collaboration.
+      </p>
+      <p>
+        As the primary backend developer, I designed and implemented the majority of the REST API and web routes, and 
+        architected the Firestore database schema and integration layer. Security was handled through a dual-authentication 
+        scheme: JWT-based authentication via the Firebase Auth SDK for user-facing routes, and API key authentication for 
+        hardware-facing routes. To support development and testing independently of the physical hardware, I built a GUI-based 
+        ESP-32 simulator that replicated the cube's start, stop, and reset commands and displayed live JSON server responses.
+      </p>
+      <p>
+        To maintain code quality across the team, I organized and modularized the codebase and developed a Pytest suite with 
+        mocked client, Firebase Auth, and Firestore dependencies to enable fast, isolated testing. I also integrated a CI 
+        pipeline that automatically runs the test suite on each push, ensuring all changes pass before pull requests are merged.
+      </p>
+      <p>
+        <a href="https://github.com/BrycesDevices/7855_202610_03">View Code</a>
+      </p>
+
+      <div class="image-row">
+        <img src="cube_web.png" alt="Web App Dashboard">
+        <img src="cube_stats.png" alt="Web App Stats Page">
+        <img src="cube_client.png" alt="Software Simulator GUI">
+      </div>
+
+      <p>The following video demo was recorded by my colleage, Perry Zhuo.</p>
+      <iframe src="https://www.youtube.com/embed/30qCVAPGlBw"
               frameborder="0"
               allowfullscreen>
       </iframe>
